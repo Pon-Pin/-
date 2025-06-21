@@ -1,0 +1,187 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #0a0a0f;
+    color: #e0f7ff;
+    margin: 0;
+    padding: 20px;
+    overflow-x: hidden;
+}
+
+/* Анимированный фон */
+canvas#bg-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: 0.25;
+}
+
+/* Контейнер */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #111122;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+}
+
+/* Заголовок */
+h1 {
+    text-align: center;
+    color: #00ffff;
+    margin-bottom: 30px;
+    font-size: 28px;
+    text-shadow: 0 0 10px #171d55, 0 0 20px #00cccc;
+}
+
+/* Сетка */
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    flex: 1;
+    min-width: 200px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #cceeff;
+    font-weight: bold;
+    text-shadow: 0 0 4px rgb(0, 48, 207);
+}
+
+/* Поля */
+input[type="number"],
+select {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    background-color: #1a1a2f;
+    color: #ffffff;
+    border: 1px solid #00ffff;
+    border-radius: 6px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+input[type="number"]:focus,
+select:focus {
+    border-color: #be1cd3;
+    outline: none;
+}
+
+/* Чекбоксы */
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* расстояние между галочкой и текстом */
+    margin-top: 15px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #00ffff;
+    border-radius: 4px;
+    background-color: transparent;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+    position: relative;
+}
+
+.checkbox-group input[type="checkbox"]:checked {
+    background-color: #ff69b4;
+    border-color: #ff69b4;
+}
+
+.checkbox-group input[type="checkbox"]::after {
+    content: "";
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.checkbox-group input[type="checkbox"]:checked::after {
+    opacity: 1;
+}
+
+.checkbox-group label {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1;
+    display: inline-block;
+}
+
+
+/* Кнопки */
+button {
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+/* Кнопка расчёта */
+button[type="submit"] {
+    background-color: #00f7ff;
+    color: #000;
+    box-shadow: 0 0 15px #00fff2, 0 0 30px #09b8b8;
+}
+
+button[type="submit"]:hover {
+    background-color: #be1cd3;
+    box-shadow: 0 0 20px #c57fff;
+    color: white;
+}
+
+/* Кнопка очистки */
+button.clear-btn {
+    background-color: #35696d;
+    color: white;
+    border: 1px solid #35696d;
+}
+
+button.clear-btn:hover {
+    background-color: #be1cd3;
+    box-shadow: 0 0 10px #be1cd3;
+    border: 1px solid #be1cd3;
+}
+
+/* Результат */
+#result {
+    margin-top: 25px;
+    padding: 20px;
+    background-color: #0b0b15;
+    border-left: 5px solid #00ffff;
+    border-radius: 6px;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #ccfaff;
+    text-shadow: 0 0 5px #00ffff;
+}
+
+.hidden {
+    display: none;
+}
